@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("hello world"),console.log((async o=>{const s=await fetch("/api/stuff");return await s.json()})())})();
