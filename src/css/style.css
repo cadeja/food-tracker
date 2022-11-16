@@ -36,11 +36,41 @@ html {
     color: var(--color-2);
 }
 
+main {
+    background-color: var(--color-2);
+    color: var(--color-1);
+}
+
+footer {
+    font-size: .8em;
+}
+
 /******************************************
 /* LAYOUT
 /*******************************************/
 
+header {
+    height: 50px;
+}
 
+footer {
+    height: 25px;
+}
+
+main { 
+    min-height: calc(100% - 75px);
+}
+
+header,
+footer {
+    display: flex;
+}
+
+header,
+footer {
+    justify-content: center;
+    align-items: center;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/

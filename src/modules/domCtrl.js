@@ -40,6 +40,11 @@ const addElement = (tag, classesAndIds = [], content = '', parent = '#content') 
     newParent.appendChild(newElement);
 };
 
+const addHTML = (content, parent = '#content') => {
+    const newParent = document.querySelector(parent);
+    newParent.innerHTML += content;
+};
+
 // removes all inner HTML in specified element;
 const deleteChildren = (parent) => {
     document.querySelector(parent).innerHTML = '';
@@ -47,4 +52,4 @@ const deleteChildren = (parent) => {
 
 
 
-export { addElement, deleteChildren };
+export { addElement, deleteChildren, addHTML };
