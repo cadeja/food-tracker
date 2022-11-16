@@ -2,7 +2,7 @@
 
 
 // takes a variety of information and adds the element to the DOM in one go!
-const addElement = (tag, classesAndIds = [], content = '', parent = '#content') => {
+const addElement = (tag, parent = '#content', classesAndIds = [], content = '') => {
     const newElement = document.createElement(tag);
     const newContent = document.createTextNode(String(content));
 
@@ -35,9 +35,8 @@ const addElement = (tag, classesAndIds = [], content = '', parent = '#content') 
     }
 
 
-    
-    const newParent = document.querySelector(parent);
-    newParent.appendChild(newElement);
+    if (parent === '') parent = '#content';
+    document.querySelector(parent).appendChild(newElement);
 };
 
 const addHTML = (content, parent = '#content') => {

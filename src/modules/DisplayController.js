@@ -5,6 +5,7 @@ import { addElement, deleteChildren, addHTML } from "./domCtrl.js";
 
 // }
 
+// adds nav and ul with links
 const buildNav = (names = [], links = []) => {
 
     if (names.length !== links.length){
@@ -13,7 +14,7 @@ const buildNav = (names = [], links = []) => {
     }
     
     addElement('nav');
-    addElement('ul',['#nav-links'],'','nav');
+    addElement('ul','nav',['#nav-links'],'');
     
     for (let i = 0; i < names.length; i++){
         addHTML(`
@@ -35,7 +36,7 @@ const buildNav = (names = [], links = []) => {
 // order is !important!
 const buildPage = () => {
     addElement('header');
-    addElement('h1', [], 'Food Tracker','header');
+    addElement('h1', 'header', [], 'Food Tracker');
 
     buildNav(['Test1','Test2','Test3'],['#','#','#']);
 
@@ -43,7 +44,7 @@ const buildPage = () => {
     addElement('nav');
 
 
-    addElement('footer',[],'Copyright Cade England 2022');
+    addElement('footer','',[],'Copyright Cade England 2022');
 }
 
 
