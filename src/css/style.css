@@ -32,17 +32,23 @@ html {
 
 #content {
     height: 100vh;
-    background-color: var(--color-1);
-    color: var(--color-2);
-}
-
-main {
     background-color: var(--color-2);
     color: var(--color-1);
 }
 
+header,
+footer {
+    background-color: var(--color-1);
+    color: var(--color-2);
+}
+
 footer {
     font-size: .8em;
+}
+
+a {
+    color: var(--color-1);
+    text-decoration: none;
 }
 
 /******************************************
@@ -57,13 +63,19 @@ footer {
     height: 25px;
 }
 
-main { 
-    min-height: calc(100% - 75px);
+main {
+    height: calc(100% - 75px);
 }
 
 header,
-footer {
+footer,
+#content {
     display: flex;
+}
+
+header,
+#content {
+    flex-direction: column;
 }
 
 header,

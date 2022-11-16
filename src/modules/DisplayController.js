@@ -1,9 +1,10 @@
 
 import { addElement, deleteChildren, addHTML } from "./domCtrl.js";
 
-// const buildHeader = () => {
-
-// }
+const buildHeader = () => {
+    addElement('header');
+    addElement('h1','header',[],'Food Tracker');
+}
 
 // adds nav and ul with links
 const buildNav = (names = [], links = []) => {
@@ -13,7 +14,7 @@ const buildNav = (names = [], links = []) => {
         return false;
     }
     
-    addElement('nav');
+    addElement('nav','main');
     addElement('ul','nav',['#nav-links'],'');
     
     for (let i = 0; i < names.length; i++){
@@ -28,23 +29,20 @@ const buildNav = (names = [], links = []) => {
 
 }
 
-// const buildFooter = () => {
-    
-// }
+const buildFooter = () => {
+    addElement('footer','',[],'copyright 2022 Cade England');
+}
 
 // adds base elements to index.html
 // order is !important!
 const buildPage = () => {
-    addElement('header');
-    addElement('h1', 'header', [], 'Food Tracker');
+    buildHeader();
+
+    addElement('main');
 
     buildNav(['Test1','Test2','Test3'],['#','#','#']);
 
-    addElement('main');
-    addElement('nav');
-
-
-    addElement('footer','',[],'Copyright Cade England 2022');
+    buildFooter();
 }
 
 
