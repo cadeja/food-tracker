@@ -1,4 +1,8 @@
-console.log('hello world');
+import './css/reset.css';
+import './css/style.css';
+import { buildPage } from './modules/DisplayController.js';
+
+buildPage();
 
 const fetchData = async (url) => {
     const response = await fetch(url);
