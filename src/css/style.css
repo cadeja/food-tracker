@@ -56,10 +56,15 @@ main {
     text-decoration: none;
 } */
 
+nav {
+    border-left: 10px solid var(--color-1);
+}
+
 nav li {
     padding: 10px;
     border-bottom: 5px solid var(--color-1)
 }
+
 
 /******************************************
 /* LAYOUT
@@ -67,10 +72,6 @@ nav li {
 
 header {
     height: 50px;
-}
-
-nav {
-    position: fixed;
 }
 
 footer {
@@ -81,21 +82,31 @@ main {
     height: calc(100% - 75px);
 }
 
+#data-table {
+    width: 400px;
+}
+
 header,
 footer,
-#content {
+#content,
+main {
     display: flex;
 }
 
 header,
-#content {
+#content,
+main{
     flex-direction: column;
 }
 
 header,
-footer {
+footer{
     justify-content: center;
     align-items: center;
+}
+
+nav {
+    align-self: flex-start;
 }
 /******************************************
 /* ADDITIONAL STYLES
