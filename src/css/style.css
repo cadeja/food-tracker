@@ -46,9 +46,19 @@ footer {
     font-size: .8em;
 }
 
-a {
+main {
+    border-left: 10px solid var(--color-1);
+    border-right: 10px solid var(--color-1);
+}
+
+/* a {
     color: var(--color-1);
     text-decoration: none;
+} */
+
+nav li {
+    padding: 10px;
+    border-bottom: 5px solid var(--color-1)
 }
 
 /******************************************
@@ -57,6 +67,10 @@ a {
 
 header {
     height: 50px;
+}
+
+nav {
+    position: fixed;
 }
 
 footer {

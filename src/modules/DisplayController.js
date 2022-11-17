@@ -7,22 +7,21 @@ const buildHeader = () => {
 }
 
 // adds nav and ul with links
-const buildNav = (names = [], links = []) => {
+const buildNav = (names = [], classes = [], parent = 'main') => {
 
-    if (names.length !== links.length){
+    if (names.length !== classes.length){
         console.log('names length does not match links length');
         return false;
     }
     
-    addElement('nav','main');
+    addElement('nav', parent);
     addElement('ul','nav',['#nav-links'],'');
     
     for (let i = 0; i < names.length; i++){
+        console.log('test');
         addHTML(`
-                <li>
-                    <a href=${links[i]}>
-                        ${names[i]}
-                    </a>
+                <li class='nav-button ${classes[i]}'>
+                    ${names[i]}
                 </li>`,
                 '#nav-links');
     }
@@ -40,7 +39,7 @@ const buildPage = () => {
 
     addElement('main');
 
-    buildNav(['Test1','Test2','Test3'],['#','#','#']);
+    buildNav(['Home','Recipes'],['home','recipes'], 'main');
 
     buildFooter();
 }
