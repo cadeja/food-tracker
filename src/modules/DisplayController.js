@@ -58,11 +58,23 @@ const populateTable = async (url) => {
     const parent = '#data-table';
     deleteChildren(parent);
 
-    // adding the data
+    // adding the data (OMITS ID)
+
+    //headers
+    addElement('tr',parent,['table-headers']);
+    for (let item in data[0]){
+        if (item !== 'id'){
+            addElement('th','.table-headers',[],item);
+        }
+    }
+
+    //data
     for (let i = 0; i < data.length; i++){
         addElement('tr',parent,[`table-row-${i}`]);
         for (let item in data[i]){
-            addElement('td',`.table-row-${i}`,[],`${data[i][item]}`);
+            if (item !== 'id'){
+                addElement('td',`.table-row-${i}`,[],`${data[i][item]}`);
+            }
         }
     };
 
