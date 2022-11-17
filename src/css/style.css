@@ -100,3 +100,26 @@ footer {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+/* nav animations */
+
+.nav-button {
+    cursor: pointer;
+}
+
+nav .inactive:hover {
+    background: var(--color-1);
+    color: var(--color-2);
+    transition-duration: .25s;
+}
+
+nav .inactive:not(:hover) {
+    background: var(--color-2);
+    color: var(--color-1);
+    transition-duration: .25s;
+}
+
+nav .active {
+    background: var(--color-1);
+    color: var(--color-2);
+}

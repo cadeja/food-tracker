@@ -4,15 +4,14 @@ import { addElement, deleteChildren, addHTML } from "./domCtrl.js";
 const buildHeader = () => {
     addElement('header');
     addElement('h1','header',[],'Food Tracker');
-}
+};
 
-// adds nav and ul with links
-const buildNav = (names = [], classes = [], parent = 'main') => {
+// adds nav and ul
+const buildNav = () => {
 
-    if (names.length !== classes.length){
-        console.log('names length does not match links length');
-        return false;
-    }
+    let names = ['Home','Recipes'];
+    let classes = ['home active','recipes inactive'];
+    let parent = 'main';
     
     addElement('nav', parent);
     addElement('ul','nav',['#nav-links'],'');
@@ -25,12 +24,11 @@ const buildNav = (names = [], classes = [], parent = 'main') => {
                 </li>`,
                 '#nav-links');
     }
-
-}
+};
 
 const buildFooter = () => {
     addElement('footer','',[],'copyright 2022 Cade England');
-}
+};
 
 // adds base elements to index.html
 // order is !important!
@@ -39,10 +37,10 @@ const buildPage = () => {
 
     addElement('main');
 
-    buildNav(['Home','Recipes'],['home','recipes'], 'main');
+    buildNav();
 
     buildFooter();
-}
+};
 
 
 export { buildPage };
